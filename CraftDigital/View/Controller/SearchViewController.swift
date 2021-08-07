@@ -9,7 +9,8 @@ import UIKit
 
 final class SearchViewController: UIViewController {
     var searchKeyword: String? = nil
-    private let cellIdentifier = "cell"
+    private let cellIdentifier = "ImageCell"
+    var viewModel: SearchViewModeling!
     private var cellViewModels = [ImageCellViewModel]()
     
     //MARK: - IBOutlets
@@ -30,15 +31,23 @@ extension SearchViewController: UISearchBarDelegate {
 
 extension SearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cellViewModels.count
+        return viewModel.numberOfItems()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellIdentifier, for: indexPath) as? ImageCell else {
             fatalError("Cell with identifier \(self.cellIdentifier) not found.")
         }
-        cell.configure(cellViewModels[indexPath.item])
+        let cellViewModel = viewModel.cellViewModel(at: indexPath)
+        cell.configure(cellViewModel)
         return cell
+    }
+}
+
+extension SearchViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = Int(collectionView.frame.width)/2 - 2
+        return CGSize(width: width, height: width + 20)
     }
 }
 

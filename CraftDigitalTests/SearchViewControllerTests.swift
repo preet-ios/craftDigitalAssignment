@@ -39,14 +39,19 @@ final class SearchViewControllerTests: XCTestCase {
         XCTAssertNotNil(makeSUT().searchCollectionView)
     }
     
-    func test_viewDidLoad_renderNoSuggestions() {
-        XCTAssertEqual(makeSUT().searchCollectionView.numberOfItems(inSection: 0), 0)
+    func test_viewDidLoad_renderNumberOfItems() {
+        let sut1 = makeSUT(viewModel: SearchViewModelEmptyMock())
+        XCTAssertEqual(sut1.viewModel.numberOfItems(), 0)
+        
+        let sut2 = makeSUT(viewModel: SearchViewModelMock())
+        XCTAssertEqual(sut2.viewModel.numberOfItems(), 1)
     }
     
     //MARK: - Helper
-    func makeSUT() -> SearchViewController {
+    func makeSUT(viewModel: SearchViewModeling = SearchViewModelMock()) -> SearchViewController {
         let storyboard: UIStoryboard = UIStoryboard(name: "Search", bundle: nil)
         let sut = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        sut.viewModel = viewModel
         _ = sut.view
         return sut
     }
