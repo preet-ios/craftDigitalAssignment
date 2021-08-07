@@ -7,13 +7,6 @@
 
 import Foundation
 
-struct SearchResult {
-    let url: String?
-    let thumbnail: String?
-    let title: String?
-    let name: String?
-}
-
 protocol SearchViewModeling {
     func numberOfItems() -> Int
     func cellViewModel(at indexPath: IndexPath) -> ImageCellViewModel
