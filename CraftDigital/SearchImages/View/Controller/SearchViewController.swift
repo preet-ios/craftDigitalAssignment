@@ -10,7 +10,7 @@ import UIKit
 final class SearchViewController: UIViewController {
     var searchKeyword: String? = nil
     private let cellIdentifier = "ImageCell"
-    var viewModel: SearchViewModeling!
+    var viewModel: ViewModeling!
     private var cellViewModels = [ImageCellViewModel]()
     
     //MARK: - IBOutlets
@@ -26,6 +26,9 @@ final class SearchViewController: UIViewController {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchKeyword = searchBar.text?.trim()
+        if let keyword = searchKeyword {
+            viewModel.searchData(keyword: keyword)
+        }
     }
 }
 

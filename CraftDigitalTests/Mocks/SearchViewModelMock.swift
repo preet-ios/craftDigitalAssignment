@@ -8,7 +8,11 @@
 import XCTest
 @testable import CraftDigital
 
-struct SearchViewModelMock: SearchViewModeling {
+struct SearchViewModelMock: ViewModeling {
+    func searchData(keyword: String) {
+        
+    }
+    
     func numberOfItems() -> Int {
         1
     }
@@ -18,7 +22,11 @@ struct SearchViewModelMock: SearchViewModeling {
     }
 }
 
-struct SearchViewModelEmptyMock: SearchViewModeling {
+struct SearchViewModelEmptyMock: ViewModeling {
+    func searchData(keyword: String) {
+        
+    }
+    
     func numberOfItems() -> Int {
         0
     }

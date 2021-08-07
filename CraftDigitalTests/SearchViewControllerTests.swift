@@ -48,7 +48,7 @@ final class SearchViewControllerTests: XCTestCase {
     }
     
     //MARK: - Helper
-    func makeSUT(viewModel: SearchViewModeling = SearchViewModelMock()) -> SearchViewController {
+    func makeSUT(viewModel: ViewModeling = SearchViewModelMock()) -> SearchViewController {
         let storyboard: UIStoryboard = UIStoryboard(name: "Search", bundle: nil)
         let sut = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
         sut.viewModel = viewModel

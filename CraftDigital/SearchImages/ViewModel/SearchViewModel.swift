@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias ViewModeling = SearchViewModeling & SearchResultAPIModeling
+
 protocol SearchViewModeling {
     func numberOfItems() -> Int
     func cellViewModel(at indexPath: IndexPath) -> ImageCellViewModel
