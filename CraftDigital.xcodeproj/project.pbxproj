@@ -11,10 +11,10 @@
 		B1ADB20F26BE36540055A8CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ADB20E26BE36540055A8CA /* SceneDelegate.swift */; };
 		B1ADB21626BE36550055A8CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1ADB21526BE36550055A8CA /* Assets.xcassets */; };
 		B1ADB21926BE36550055A8CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1ADB21726BE36550055A8CA /* LaunchScreen.storyboard */; };
-		B1ADB22426BE36550055A8CA /* CraftDigitalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ADB22326BE36550055A8CA /* CraftDigitalTests.swift */; };
 		B1ADB22F26BE36550055A8CA /* CraftDigitalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ADB22E26BE36550055A8CA /* CraftDigitalUITests.swift */; };
 		B1ADB24926BE40B80055A8CA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ADB24526BE40B80055A8CA /* SearchViewController.swift */; };
 		B1ADB24A26BE40B80055A8CA /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1ADB24826BE40B80055A8CA /* Search.storyboard */; };
+		B1ADB25E26BE42870055A8CA /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ADB25D26BE42870055A8CA /* SearchViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,13 +42,13 @@
 		B1ADB21826BE36550055A8CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1ADB21A26BE36550055A8CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1ADB21F26BE36550055A8CA /* CraftDigitalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CraftDigitalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1ADB22326BE36550055A8CA /* CraftDigitalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftDigitalTests.swift; sourceTree = "<group>"; };
 		B1ADB22526BE36550055A8CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1ADB22A26BE36550055A8CA /* CraftDigitalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CraftDigitalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1ADB22E26BE36550055A8CA /* CraftDigitalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftDigitalUITests.swift; sourceTree = "<group>"; };
 		B1ADB23026BE36550055A8CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1ADB24526BE40B80055A8CA /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B1ADB24826BE40B80055A8CA /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		B1ADB25D26BE42870055A8CA /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +113,8 @@
 		B1ADB22226BE36550055A8CA /* CraftDigitalTests */ = {
 			isa = PBXGroup;
 			children = (
-				B1ADB22326BE36550055A8CA /* CraftDigitalTests.swift */,
 				B1ADB22526BE36550055A8CA /* Info.plist */,
+				B1ADB25D26BE42870055A8CA /* SearchViewControllerTests.swift */,
 			);
 			path = CraftDigitalTests;
 			sourceTree = "<group>";
@@ -214,6 +214,7 @@
 					};
 					B1ADB21E26BE36550055A8CA = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 						TestTargetID = B1ADB20826BE36540055A8CA;
 					};
 					B1ADB22926BE36550055A8CA = {
@@ -284,7 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1ADB22426BE36550055A8CA /* CraftDigitalTests.swift in Sources */,
+				B1ADB25E26BE42870055A8CA /* SearchViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +481,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CraftDigitalTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -490,6 +492,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.craft.CraftDigitalTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CraftDigital.app/CraftDigital";
@@ -501,6 +504,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CraftDigitalTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;

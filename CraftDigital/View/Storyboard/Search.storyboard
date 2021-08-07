@@ -10,7 +10,7 @@
         <!--Craft Digital -->
         <scene sceneID="OAM-iu-YAI">
             <objects>
-                <viewController id="Cas-Em-moF" customClass="SearchViewController" customModule="CraftDigital" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="Cas-Em-moF" customClass="SearchViewController" customModule="CraftDigital" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i0d-c1-YBX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,6 +21,9 @@
                                     <searchBar contentMode="redraw" placeholder="Type Here" translatesAutoresizingMaskIntoConstraints="NO" id="tyF-KT-118">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Cas-Em-moF" id="LSu-il-lBq"/>
+                                        </connections>
                                     </searchBar>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="65e-U8-NvU">
                                         <rect key="frame" x="0.0" y="66" width="414" height="708"/>
@@ -110,6 +113,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Craft Digital " id="pQb-Xp-5bG"/>
+                    <connections>
+                        <outlet property="searchBar" destination="tyF-KT-118" id="trD-yw-UKN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awF-of-VKf" sceneMemberID="firstResponder"/>
             </objects>
