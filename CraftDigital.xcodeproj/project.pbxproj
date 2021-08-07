@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B1ADB20D26BE36540055A8CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ADB20C26BE36540055A8CA /* AppDelegate.swift */; };
+		B1ADB20F26BE36540055A8CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ADB20E26BE36540055A8CA /* SceneDelegate.swift */; };
+		B1ADB21126BE36540055A8CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ADB21026BE36540055A8CA /* ViewController.swift */; };
+		B1ADB21426BE36540055A8CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1ADB21226BE36540055A8CA /* Main.storyboard */; };
+		B1ADB21626BE36550055A8CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1ADB21526BE36550055A8CA /* Assets.xcassets */; };
+		B1ADB21926BE36550055A8CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1ADB21726BE36550055A8CA /* LaunchScreen.storyboard */; };
+		B1ADB22426BE36550055A8CA /* CraftDigitalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ADB22326BE36550055A8CA /* CraftDigitalTests.swift */; };
+		B1ADB22F26BE36550055A8CA /* CraftDigitalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ADB22E26BE36550055A8CA /* CraftDigitalUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B1ADB22026BE36550055A8CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B1ADB20126BE36540055A8CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B1ADB20826BE36540055A8CA;
+			remoteInfo = CraftDigital;
+		};
+		B1ADB22B26BE36550055A8CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B1ADB20126BE36540055A8CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B1ADB20826BE36540055A8CA;
+			remoteInfo = CraftDigital;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B1ADB20926BE36540055A8CA /* CraftDigital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CraftDigital.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1ADB20C26BE36540055A8CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B1ADB20E26BE36540055A8CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B1ADB21026BE36540055A8CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B1ADB21326BE36540055A8CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B1ADB21526BE36550055A8CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B1ADB21826BE36550055A8CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B1ADB21A26BE36550055A8CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1ADB21F26BE36550055A8CA /* CraftDigitalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CraftDigitalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1ADB22326BE36550055A8CA /* CraftDigitalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftDigitalTests.swift; sourceTree = "<group>"; };
+		B1ADB22526BE36550055A8CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1ADB22A26BE36550055A8CA /* CraftDigitalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CraftDigitalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1ADB22E26BE36550055A8CA /* CraftDigitalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftDigitalUITests.swift; sourceTree = "<group>"; };
+		B1ADB23026BE36550055A8CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B1ADB20626BE36540055A8CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1ADB21C26BE36550055A8CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1ADB22726BE36550055A8CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B1ADB20026BE36540055A8CA = {
+			isa = PBXGroup;
+			children = (
+				B1ADB20B26BE36540055A8CA /* CraftDigital */,
+				B1ADB22226BE36550055A8CA /* CraftDigitalTests */,
+				B1ADB22D26BE36550055A8CA /* CraftDigitalUITests */,
+				B1ADB20A26BE36540055A8CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B1ADB20A26BE36540055A8CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B1ADB20926BE36540055A8CA /* CraftDigital.app */,
+				B1ADB21F26BE36550055A8CA /* CraftDigitalTests.xctest */,
+				B1ADB22A26BE36550055A8CA /* CraftDigitalUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B1ADB20B26BE36540055A8CA /* CraftDigital */ = {
+			isa = PBXGroup;
+			children = (
+				B1ADB20C26BE36540055A8CA /* AppDelegate.swift */,
+				B1ADB20E26BE36540055A8CA /* SceneDelegate.swift */,
+				B1ADB21026BE36540055A8CA /* ViewController.swift */,
+				B1ADB21226BE36540055A8CA /* Main.storyboard */,
+				B1ADB21526BE36550055A8CA /* Assets.xcassets */,
+				B1ADB21726BE36550055A8CA /* LaunchScreen.storyboard */,
+				B1ADB21A26BE36550055A8CA /* Info.plist */,
+			);
+			path = CraftDigital;
+			sourceTree = "<group>";
+		};
+		B1ADB22226BE36550055A8CA /* CraftDigitalTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1ADB22326BE36550055A8CA /* CraftDigitalTests.swift */,
+				B1ADB22526BE36550055A8CA /* Info.plist */,
+			);
+			path = CraftDigitalTests;
+			sourceTree = "<group>";
+		};
+		B1ADB22D26BE36550055A8CA /* CraftDigitalUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B1ADB22E26BE36550055A8CA /* CraftDigitalUITests.swift */,
+				B1ADB23026BE36550055A8CA /* Info.plist */,
+			);
+			path = CraftDigitalUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B1ADB20826BE36540055A8CA /* CraftDigital */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1ADB23326BE36550055A8CA /* Build configuration list for PBXNativeTarget "CraftDigital" */;
+			buildPhases = (
+				B1ADB20526BE36540055A8CA /* Sources */,
+				B1ADB20626BE36540055A8CA /* Frameworks */,
+				B1ADB20726BE36540055A8CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CraftDigital;
+			productName = CraftDigital;
+			productReference = B1ADB20926BE36540055A8CA /* CraftDigital.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B1ADB21E26BE36550055A8CA /* CraftDigitalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1ADB23626BE36550055A8CA /* Build configuration list for PBXNativeTarget "CraftDigitalTests" */;
+			buildPhases = (
+				B1ADB21B26BE36550055A8CA /* Sources */,
+				B1ADB21C26BE36550055A8CA /* Frameworks */,
+				B1ADB21D26BE36550055A8CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1ADB22126BE36550055A8CA /* PBXTargetDependency */,
+			);
+			name = CraftDigitalTests;
+			productName = CraftDigitalTests;
+			productReference = B1ADB21F26BE36550055A8CA /* CraftDigitalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B1ADB22926BE36550055A8CA /* CraftDigitalUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1ADB23926BE36550055A8CA /* Build configuration list for PBXNativeTarget "CraftDigitalUITests" */;
+			buildPhases = (
+				B1ADB22626BE36550055A8CA /* Sources */,
+				B1ADB22726BE36550055A8CA /* Frameworks */,
+				B1ADB22826BE36550055A8CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1ADB22C26BE36550055A8CA /* PBXTargetDependency */,
+			);
+			name = CraftDigitalUITests;
+			productName = CraftDigitalUITests;
+			productReference = B1ADB22A26BE36550055A8CA /* CraftDigitalUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B1ADB20126BE36540055A8CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					B1ADB20826BE36540055A8CA = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					B1ADB21E26BE36550055A8CA = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = B1ADB20826BE36540055A8CA;
+					};
+					B1ADB22926BE36550055A8CA = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = B1ADB20826BE36540055A8CA;
+					};
+				};
+			};
+			buildConfigurationList = B1ADB20426BE36540055A8CA /* Build configuration list for PBXProject "CraftDigital" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B1ADB20026BE36540055A8CA;
+			productRefGroup = B1ADB20A26BE36540055A8CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B1ADB20826BE36540055A8CA /* CraftDigital */,
+				B1ADB21E26BE36550055A8CA /* CraftDigitalTests */,
+				B1ADB22926BE36550055A8CA /* CraftDigitalUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B1ADB20726BE36540055A8CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1ADB21926BE36550055A8CA /* LaunchScreen.storyboard in Resources */,
+				B1ADB21626BE36550055A8CA /* Assets.xcassets in Resources */,
+				B1ADB21426BE36540055A8CA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1ADB21D26BE36550055A8CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1ADB22826BE36550055A8CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B1ADB20526BE36540055A8CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1ADB21126BE36540055A8CA /* ViewController.swift in Sources */,
+				B1ADB20D26BE36540055A8CA /* AppDelegate.swift in Sources */,
+				B1ADB20F26BE36540055A8CA /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1ADB21B26BE36550055A8CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1ADB22426BE36550055A8CA /* CraftDigitalTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1ADB22626BE36550055A8CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1ADB22F26BE36550055A8CA /* CraftDigitalUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B1ADB22126BE36550055A8CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B1ADB20826BE36540055A8CA /* CraftDigital */;
+			targetProxy = B1ADB22026BE36550055A8CA /* PBXContainerItemProxy */;
+		};
+		B1ADB22C26BE36550055A8CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B1ADB20826BE36540055A8CA /* CraftDigital */;
+			targetProxy = B1ADB22B26BE36550055A8CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B1ADB21226BE36540055A8CA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B1ADB21326BE36540055A8CA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B1ADB21726BE36550055A8CA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B1ADB21826BE36550055A8CA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B1ADB23126BE36550055A8CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B1ADB23226BE36550055A8CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B1ADB23426BE36550055A8CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CraftDigital/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.craft.CraftDigital;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B1ADB23526BE36550055A8CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CraftDigital/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.craft.CraftDigital;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B1ADB23726BE36550055A8CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CraftDigitalTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.craft.CraftDigitalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CraftDigital.app/CraftDigital";
+			};
+			name = Debug;
+		};
+		B1ADB23826BE36550055A8CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CraftDigitalTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.craft.CraftDigitalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CraftDigital.app/CraftDigital";
+			};
+			name = Release;
+		};
+		B1ADB23A26BE36550055A8CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CraftDigitalUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.craft.CraftDigitalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CraftDigital;
+			};
+			name = Debug;
+		};
+		B1ADB23B26BE36550055A8CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CraftDigitalUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.craft.CraftDigitalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CraftDigital;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B1ADB20426BE36540055A8CA /* Build configuration list for PBXProject "CraftDigital" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1ADB23126BE36550055A8CA /* Debug */,
+				B1ADB23226BE36550055A8CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1ADB23326BE36550055A8CA /* Build configuration list for PBXNativeTarget "CraftDigital" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1ADB23426BE36550055A8CA /* Debug */,
+				B1ADB23526BE36550055A8CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1ADB23626BE36550055A8CA /* Build configuration list for PBXNativeTarget "CraftDigitalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1ADB23726BE36550055A8CA /* Debug */,
+				B1ADB23826BE36550055A8CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1ADB23926BE36550055A8CA /* Build configuration list for PBXNativeTarget "CraftDigitalUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1ADB23A26BE36550055A8CA /* Debug */,
+				B1ADB23B26BE36550055A8CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B1ADB20126BE36540055A8CA /* Project object */;
+}
