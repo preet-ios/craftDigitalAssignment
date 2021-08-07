@@ -9,6 +9,7 @@ import XCTest
 @testable import CraftDigital
 
 final class SearchViewControllerTests: XCTestCase {
+    //MARK: - SearchBar Tests
     func test_hasSearchBar() {
         XCTAssertNotNil(makeSUT().searchBar)
     }
@@ -31,6 +32,15 @@ final class SearchViewControllerTests: XCTestCase {
         let expectedText = "Testing"
         let actualKeyword = sut.searchKeyword
         XCTAssertEqual(expectedText, actualKeyword)
+    }
+    
+    //MARK: - TableView Tests
+    func test_hasTableView() {
+        XCTAssertNotNil(makeSUT().searchCollectionView)
+    }
+    
+    func test_viewDidLoad_renderNoSuggestions() {
+        XCTAssertEqual(makeSUT().searchCollectionView.numberOfItems(inSection: 0), 0)
     }
     
     //MARK: - Helper

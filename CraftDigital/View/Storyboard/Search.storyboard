@@ -99,6 +99,9 @@
                                                 <size key="customSize" width="180" height="240"/>
                                             </collectionViewCell>
                                         </cells>
+                                        <connections>
+                                            <outlet property="delegate" destination="Cas-Em-moF" id="Uuk-HL-I0w"/>
+                                        </connections>
                                     </collectionView>
                                 </subviews>
                             </stackView>
@@ -115,6 +118,7 @@
                     <navigationItem key="navigationItem" title="Craft Digital " id="pQb-Xp-5bG"/>
                     <connections>
                         <outlet property="searchBar" destination="tyF-KT-118" id="trD-yw-UKN"/>
+                        <outlet property="searchCollectionView" destination="65e-U8-NvU" id="EnQ-92-ulC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awF-of-VKf" sceneMemberID="firstResponder"/>
