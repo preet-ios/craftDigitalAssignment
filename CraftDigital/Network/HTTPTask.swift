@@ -10,6 +10,7 @@ import Foundation
 typealias HTTPHeaders = [String:String]
 
 enum HTTPTask {
+    case request
     case requestParamsAndHeaders(urlParmams: Parameters?,
                                  headers: HTTPHeaders?)
 }
