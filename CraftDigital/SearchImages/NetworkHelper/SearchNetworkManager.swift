@@ -22,3 +22,9 @@ enum Result<String>{
 protocol SearchManaging {
     func getSearch(page: Int,query: String, pageSize: Int, autoCorrect: Bool, completion: @escaping (_ movie: [SearchResult]?,_ error: String?)->())
 }
+
+struct SearchManager: SearchManaging {
+    func getSearch(page: Int, query: String, pageSize: Int, autoCorrect: Bool, completion: @escaping ([SearchResult]?, String?) -> ()) {
+        
+    }
+}

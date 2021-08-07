@@ -50,9 +50,3 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: width + 20)
     }
 }
-
-extension String {
-    func trim() -> String {
-        self.trimmingCharacters(in: .whitespacesAndNewlines)
-    }
-}
