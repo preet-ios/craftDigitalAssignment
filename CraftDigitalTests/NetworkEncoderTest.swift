@@ -20,7 +20,7 @@ final class CraftAPIClientTests: XCTestCase {
             "userID": 1,
             "name": "Preet",
             "email": "preet@gmail.com",
-            "IsCoding": true
+            "isCoding": true
         ]
         
         do {
@@ -31,7 +31,7 @@ final class CraftAPIClientTests: XCTestCase {
                 return
             }
 
-            let expectedURL = "https:www.google.com/?Name=Preet&Email=preet%2540gmail.com&UserID=1&IsCoding=true"
+            let expectedURL = "https:www.google.com/?name=Preet&email=preet%2540gmail.com&userID=1&isCoding=true"
             XCTAssertEqual(fullURL.absoluteString.sorted(), expectedURL.sorted())
         }catch {
             

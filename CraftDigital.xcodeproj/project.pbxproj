@@ -21,6 +21,9 @@
 		B1ADB2A626BE8C0E0055A8CA /* NetworkEncoderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ADB2A526BE8C0E0055A8CA /* NetworkEncoderTest.swift */; };
 		B1ADB2AF26BE8F1F0055A8CA /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ADB2AE26BE8F1F0055A8CA /* ParameterEncoding.swift */; };
 		B1ADB2B726BE8F780055A8CA /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ADB2B626BE8F780055A8CA /* URLParameterEncoder.swift */; };
+		B1ADB2BE26BE91F50055A8CA /* SearchNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ADB2BD26BE91F50055A8CA /* SearchNetworkManager.swift */; };
+		B1ADB2C626BE95270055A8CA /* SearchManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ADB2C526BE95270055A8CA /* SearchManagerMock.swift */; };
+		B1ADB2CB26BE96790055A8CA /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ADB2CA26BE96790055A8CA /* SearchViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		B1ADB2A526BE8C0E0055A8CA /* NetworkEncoderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEncoderTest.swift; sourceTree = "<group>"; };
 		B1ADB2AE26BE8F1F0055A8CA /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		B1ADB2B626BE8F780055A8CA /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		B1ADB2BD26BE91F50055A8CA /* SearchNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNetworkManager.swift; sourceTree = "<group>"; };
+		B1ADB2C526BE95270055A8CA /* SearchManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManagerMock.swift; sourceTree = "<group>"; };
+		B1ADB2CA26BE96790055A8CA /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +123,7 @@
 				B1ADB21526BE36550055A8CA /* Assets.xcassets */,
 				B1ADB21726BE36550055A8CA /* LaunchScreen.storyboard */,
 				B1ADB21A26BE36550055A8CA /* Info.plist */,
-				B1ADB28F26BE83670055A8CA /* ViewModel */,
-				B1ADB24626BE40B80055A8CA /* View */,
+				B1ADB2BB26BE91420055A8CA /* SearchImages */,
 			);
 			path = CraftDigital;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			children = (
 				B1ADB22526BE36550055A8CA /* Info.plist */,
 				B1ADB25D26BE42870055A8CA /* SearchViewControllerTests.swift */,
+				B1ADB2CA26BE96790055A8CA /* SearchViewModelTests.swift */,
 				B1ADB2A526BE8C0E0055A8CA /* NetworkEncoderTest.swift */,
 				B1ADB29826BE886B0055A8CA /* Mocks */,
 			);
@@ -189,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				B1ADB29926BE887B0055A8CA /* SearchViewModelMock.swift */,
+				B1ADB2C526BE95270055A8CA /* SearchManagerMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -208,6 +215,24 @@
 				B1ADB2B626BE8F780055A8CA /* URLParameterEncoder.swift */,
 			);
 			path = Encoding;
+			sourceTree = "<group>";
+		};
+		B1ADB2BB26BE91420055A8CA /* SearchImages */ = {
+			isa = PBXGroup;
+			children = (
+				B1ADB2BC26BE91690055A8CA /* NetworkHelper */,
+				B1ADB24626BE40B80055A8CA /* View */,
+				B1ADB28F26BE83670055A8CA /* ViewModel */,
+			);
+			path = SearchImages;
+			sourceTree = "<group>";
+		};
+		B1ADB2BC26BE91690055A8CA /* NetworkHelper */ = {
+			isa = PBXGroup;
+			children = (
+				B1ADB2BD26BE91F50055A8CA /* SearchNetworkManager.swift */,
+			);
+			path = NetworkHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1ADB2BE26BE91F50055A8CA /* SearchNetworkManager.swift in Sources */,
 				B1ADB2AF26BE8F1F0055A8CA /* ParameterEncoding.swift in Sources */,
 				B1ADB20D26BE36540055A8CA /* AppDelegate.swift in Sources */,
 				B1ADB29126BE83770055A8CA /* SearchViewModel.swift in Sources */,
@@ -356,8 +382,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1ADB29A26BE887B0055A8CA /* SearchViewModelMock.swift in Sources */,
+				B1ADB2C626BE95270055A8CA /* SearchManagerMock.swift in Sources */,
 				B1ADB25E26BE42870055A8CA /* SearchViewControllerTests.swift in Sources */,
 				B1ADB2A626BE8C0E0055A8CA /* NetworkEncoderTest.swift in Sources */,
+				B1ADB2CB26BE96790055A8CA /* SearchViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
