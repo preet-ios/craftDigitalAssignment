@@ -10,6 +10,7 @@ import UIKit
 final class SearchViewController: UIViewController {
     var searchKeyword: String? = nil
     private let cellIdentifier = "ImageCell"
+    private var loader: UIAlertController?
     var viewModel: ViewModeling!
     private var cellViewModels = [ImageCellViewModel]()
     
@@ -24,12 +25,13 @@ final class SearchViewController: UIViewController {
     }
     
     private func navigationUISetUp() {
-        title = "News Feeds"
+        title = "Digital Craft"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.hidesSearchBarWhenScrolling = false
         let search = UISearchController(searchResultsController: nil)
         self.navigationItem.searchController = search
         navigationItem.searchController?.searchBar.delegate = self
+        navigationItem.searchController?.obscuresBackgroundDuringPresentation = false
         self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
     }
     
@@ -38,6 +40,22 @@ final class SearchViewController: UIViewController {
         viewModel.reloadData = { [weak self] in
             DispatchQueue.main.async {
                 self?.searchCollectionView.reloadData()
+            }
+        }
+        
+        viewModel.showLoader = { [weak self] flag in
+            DispatchQueue.main.async {
+                if flag {
+                    self?.loader =  self?.showLoader()
+                } else {
+                    self?.loader?.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
+        viewModel.showError = { [weak self] message in
+            guard let weakSelf = self else { return }
+            DispatchQueue.main.async {
+                Toast.show(message: message, controller: weakSelf)
             }
         }
     }
@@ -78,10 +96,15 @@ extension SearchViewController: UICollectionViewDelegate {
         let transformation =  CATransform3DTranslate(CATransform3DIdentity, 0, 50, 0)
         cell.layer.transform = transformation
         cell.alpha = 0.3
-        UIView.animate(withDuration: 0.75) {
-          cell.layer.transform = CATransform3DIdentity
-          cell.alpha = 1.0
+        
+        UIView.animate(withDuration: 0.75, delay: 0.0, options: .allowUserInteraction) {
+            cell.layer.transform = CATransform3DIdentity
+            cell.alpha = 1.0
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectItem(at: indexPath)
     }
 }
 

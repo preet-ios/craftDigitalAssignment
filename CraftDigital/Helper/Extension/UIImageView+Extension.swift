@@ -20,8 +20,6 @@ extension UIImageView {
     }
 
     image = nil
-    self.contentMode = .scaleAspectFill
-    self.clipsToBounds = true
     var activityIndecator: UIActivityIndicatorView!
 
     if !self.subviews.contains(UIActivityIndicatorView()) {
@@ -57,7 +55,17 @@ extension UIImageView {
           self.image = imageToCache
           activityIndecator.isHidden = true
         }
+      } else {
+        self.noImageFound(activityIndecator)
       }
     }.resume()
   }
+    
+    private func noImageFound(_ activityIndecator: UIActivityIndicatorView) {
+        DispatchQueue.main.async {
+          activityIndecator.removeFromSuperview()
+          activityIndecator.isHidden = true
+          self.image = UIImage(named: "placeholder")
+        }
+    }
 }

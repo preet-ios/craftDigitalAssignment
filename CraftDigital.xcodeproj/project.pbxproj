@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		B12DAD7A26BFA2F000578D9E /* Feed+EntityCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DAD7926BFA2F000578D9E /* Feed+EntityCreation.swift */; };
 		B12DAD7F26BFD35F00578D9E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DAD7E26BFD35F00578D9E /* UIView+Extension.swift */; };
+		B12DAD8626C006CC00578D9E /* FeedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DAD8426C006CC00578D9E /* FeedImageViewController.swift */; };
+		B12DAD8726C006CC00578D9E /* FeedImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B12DAD8526C006CC00578D9E /* FeedImageViewController.xib */; };
+		B12DAD9026C007E500578D9E /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DAD8F26C007E500578D9E /* SearchRouter.swift */; };
+		B12DAD9826C0273A00578D9E /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DAD9726C0273A00578D9E /* UIViewController+Loading.swift */; };
+		B12DAD9D26C027F400578D9E /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DAD9C26C027F400578D9E /* Toast.swift */; };
 		B13E892126BF7D88005624F9 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13E892026BF7D88005624F9 /* UIImageView+Extension.swift */; };
 		B13E892726BF8F1E005624F9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13E892626BF8F1E005624F9 /* CoreDataManager.swift */; };
 		B13E892E26BF8FBF005624F9 /* CraftDigital.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B13E892C26BF8FBF005624F9 /* CraftDigital.xcdatamodeld */; };
@@ -65,6 +70,11 @@
 /* Begin PBXFileReference section */
 		B12DAD7926BFA2F000578D9E /* Feed+EntityCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Feed+EntityCreation.swift"; sourceTree = "<group>"; };
 		B12DAD7E26BFD35F00578D9E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		B12DAD8426C006CC00578D9E /* FeedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageViewController.swift; sourceTree = "<group>"; };
+		B12DAD8526C006CC00578D9E /* FeedImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedImageViewController.xib; sourceTree = "<group>"; };
+		B12DAD8F26C007E500578D9E /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		B12DAD9726C0273A00578D9E /* UIViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Loading.swift"; sourceTree = "<group>"; };
+		B12DAD9C26C027F400578D9E /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		B13E892026BF7D88005624F9 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		B13E892626BF8F1E005624F9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B13E892D26BF8FBF005624F9 /* CraftDigital.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CraftDigital.xcdatamodel; sourceTree = "<group>"; };
@@ -132,12 +142,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B13E891C26BF7D5E005624F9 /* Support */ = {
+		B12DAD8326C0069E00578D9E /* FeedImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B12DAD8426C006CC00578D9E /* FeedImageViewController.swift */,
+				B12DAD8526C006CC00578D9E /* FeedImageViewController.xib */,
+			);
+			path = FeedImageViewController;
+			sourceTree = "<group>";
+		};
+		B12DAD8E26C007D600578D9E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B12DAD8F26C007E500578D9E /* SearchRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B13E891C26BF7D5E005624F9 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				B1ADB2D926BEA0170055A8CA /* Extension */,
+				B12DAD9C26C027F400578D9E /* Toast.swift */,
 			);
-			path = Support;
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		B13E892526BF8F0C005624F9 /* CoreData Manager */ = {
@@ -155,6 +183,7 @@
 				B13E89A626BF9B9B005624F9 /* EntityCreation */,
 				B13E893226BF9036005624F9 /* Data */,
 				B13E892C26BF8FBF005624F9 /* CraftDigital.xcdatamodeld */,
+				B1ADB20C26BE36540055A8CA /* AppDelegate.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -212,13 +241,13 @@
 			children = (
 				B13E892526BF8F0C005624F9 /* CoreData Manager */,
 				B1ADB2A426BE8B800055A8CA /* Network */,
-				B1ADB20C26BE36540055A8CA /* AppDelegate.swift */,
 				B1ADB20E26BE36540055A8CA /* SceneDelegate.swift */,
 				B1ADB21526BE36550055A8CA /* Assets.xcassets */,
 				B1ADB21726BE36550055A8CA /* LaunchScreen.storyboard */,
 				B1ADB21A26BE36550055A8CA /* Info.plist */,
+				B12DAD8326C0069E00578D9E /* FeedImageViewController */,
 				B1ADB2F926BF77FE0055A8CA /* Factory */,
-				B13E891C26BF7D5E005624F9 /* Support */,
+				B13E891C26BF7D5E005624F9 /* Helper */,
 				B1ADB2BB26BE91420055A8CA /* SearchImages */,
 			);
 			path = CraftDigital;
@@ -320,6 +349,7 @@
 		B1ADB2BB26BE91420055A8CA /* SearchImages */ = {
 			isa = PBXGroup;
 			children = (
+				B12DAD8E26C007D600578D9E /* Router */,
 				B13E894F26BF964A005624F9 /* DBManager */,
 				B1ADB2BC26BE91690055A8CA /* NetworkHelper */,
 				B1ADB24626BE40B80055A8CA /* View */,
@@ -344,6 +374,7 @@
 				B1ADB2DA26BEA0220055A8CA /* String+Extension.swift */,
 				B13E892026BF7D88005624F9 /* UIImageView+Extension.swift */,
 				B12DAD7E26BFD35F00578D9E /* UIView+Extension.swift */,
+				B12DAD9726C0273A00578D9E /* UIViewController+Loading.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -462,6 +493,7 @@
 			files = (
 				B1ADB21926BE36550055A8CA /* LaunchScreen.storyboard in Resources */,
 				B1ADB21626BE36550055A8CA /* Assets.xcassets in Resources */,
+				B12DAD8726C006CC00578D9E /* FeedImageViewController.xib in Resources */,
 				B1ADB24A26BE40B80055A8CA /* Search.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,13 +523,17 @@
 				B1ADB2DB26BEA0220055A8CA /* String+Extension.swift in Sources */,
 				B13E894B26BF95DF005624F9 /* Feed+CoreDataProperties.swift in Sources */,
 				B13E895126BF9665005624F9 /* SearchFeedDBManager.swift in Sources */,
+				B12DAD9026C007E500578D9E /* SearchRouter.swift in Sources */,
 				B1ADB2FB26BF780A0055A8CA /* FactoryManager.swift in Sources */,
 				B1ADB2F026BEA5400055A8CA /* HTTPMethod.swift in Sources */,
 				B13E89B426BF9EC2005624F9 /* Query+CoreDataClass.swift in Sources */,
 				B1ADB2EB26BEA2160055A8CA /* EndPointType.swift in Sources */,
 				B1ADB2BE26BE91F50055A8CA /* SearchNetworkManager.swift in Sources */,
 				B13E892726BF8F1E005624F9 /* CoreDataManager.swift in Sources */,
+				B12DAD9D26C027F400578D9E /* Toast.swift in Sources */,
+				B12DAD8626C006CC00578D9E /* FeedImageViewController.swift in Sources */,
 				B13E89B526BF9EC2005624F9 /* Query+CoreDataProperties.swift in Sources */,
+				B12DAD9826C0273A00578D9E /* UIViewController+Loading.swift in Sources */,
 				B1ADB2AF26BE8F1F0055A8CA /* ParameterEncoding.swift in Sources */,
 				B12DAD7F26BFD35F00578D9E /* UIView+Extension.swift in Sources */,
 				B1ADB2E626BEA1ED0055A8CA /* Router.swift in Sources */,
