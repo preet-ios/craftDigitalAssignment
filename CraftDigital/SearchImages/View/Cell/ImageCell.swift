@@ -18,13 +18,20 @@ final class ImageCell: UICollectionViewCell {
     
     //MARK: - IBOutlets
     @IBOutlet weak var viewOuter: UIView!
-    @IBOutlet weak var imageViewResult: UIImageView!
-    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var feedImageView: UIImageView! {
+        didSet{
+            feedImageView.layer.cornerRadius = 5.0
+            feedImageView.layer.masksToBounds = true
+        }
+    }
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
     //MARK: - Set UI
     override func layoutIfNeeded() {
-        imageViewResult.contentMode = .scaleAspectFill
-        imageViewResult.clipsToBounds = true
+        feedImageView.contentMode = .scaleAspectFill
+        feedImageView.clipsToBounds = true
         
         viewOuter.layer.cornerRadius = 5.0
         viewOuter.layer.borderColor = UIColor.lightGray.cgColor
@@ -33,7 +40,8 @@ final class ImageCell: UICollectionViewCell {
     
     //MARK: - Configure
     func configure(_ viewModel: ImageCellViewModel) {
-        labelTitle?.text = viewModel.title
-        imageViewResult?.image = UIImage(named: viewModel.thumbnail ?? "")
+        titleLabel?.text = viewModel.title
+        nameLabel?.text = viewModel.name
+        feedImageView.loadImageWith(url: viewModel.thumbnail, placeholder: UIImage(named: "placeholder"))
     }
 }

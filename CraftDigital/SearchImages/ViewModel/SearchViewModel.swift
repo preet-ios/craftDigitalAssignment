@@ -18,14 +18,31 @@ protocol SearchViewModeling {
 }
 
 protocol SearchResultAPIModeling {
+    var isAlreadyInProgress: Bool {get set}
+    var isNewSearch: Bool {get set}
+    var isLoadMore: Bool {get set}
+    
     func searchData(keyword: String)
 }
 
 final class SearchViewModel {
+    private var searchKeyword = ""
     private let networkManager: SearchManaging
     private var items: [SearchResult] = [] {
         didSet {
             reloadData?()
+        }
+    }
+    
+    var isAlreadyInProgress = false
+    private let perPageItem = 20
+    var isNewSearch = true
+    var isLoadMore = false {
+        didSet {
+            if isLoadMore {
+                isNewSearch = false
+                self.searchData(keyword: searchKeyword)
+            }
         }
     }
     
@@ -50,12 +67,22 @@ extension SearchViewModel: SearchViewModeling {
 
 extension SearchViewModel: SearchResultAPIModeling {
     func searchData(keyword: String) {
-        networkManager.getSearch(page: 1,
+        searchKeyword = keyword
+        searchAPICall(keyword: searchKeyword, isNewSearch: true, pageCount: 1)
+    }
+    
+    private func searchAPICall(keyword: String, isNewSearch: Bool, pageCount: Int) {
+        if isNewSearch {
+            items.removeAll()
+        }
+        isAlreadyInProgress = true
+        networkManager.getSearch(page: pageCount,
                                  query: keyword,
-                                 pageSize: 10,
+                                 pageSize: perPageItem,
                                  autoCorrect: true) { results, error in
+            self.isAlreadyInProgress = false
             if let result = results {
-                self.items = result
+                self.items.append(contentsOf: result)
             } else {
                 //Error handling
             }

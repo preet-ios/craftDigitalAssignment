@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B13E892126BF7D88005624F9 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13E892026BF7D88005624F9 /* UIImageView+Extension.swift */; };
 		B1ADB20D26BE36540055A8CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ADB20C26BE36540055A8CA /* AppDelegate.swift */; };
 		B1ADB20F26BE36540055A8CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ADB20E26BE36540055A8CA /* SceneDelegate.swift */; };
 		B1ADB21626BE36550055A8CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1ADB21526BE36550055A8CA /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B13E892026BF7D88005624F9 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		B1ADB20926BE36540055A8CA /* CraftDigital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CraftDigital.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1ADB20C26BE36540055A8CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1ADB20E26BE36540055A8CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B13E891C26BF7D5E005624F9 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				B1ADB2D926BEA0170055A8CA /* Extension */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		B1ADB20026BE36540055A8CA = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +150,7 @@
 				B1ADB21726BE36550055A8CA /* LaunchScreen.storyboard */,
 				B1ADB21A26BE36550055A8CA /* Info.plist */,
 				B1ADB2F926BF77FE0055A8CA /* Factory */,
-				B1ADB2D926BEA0170055A8CA /* Extension */,
+				B13E891C26BF7D5E005624F9 /* Support */,
 				B1ADB2BB26BE91420055A8CA /* SearchImages */,
 			);
 			path = CraftDigital;
@@ -263,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				B1ADB2DA26BEA0220055A8CA /* String+Extension.swift */,
+				B13E892026BF7D88005624F9 /* UIImageView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -421,6 +432,7 @@
 				B1ADB2B726BE8F780055A8CA /* URLParameterEncoder.swift in Sources */,
 				B1ADB24926BE40B80055A8CA /* SearchViewController.swift in Sources */,
 				B1ADB2F526BEC2610055A8CA /* ResponseModel.swift in Sources */,
+				B13E892126BF7D88005624F9 /* UIImageView+Extension.swift in Sources */,
 				B1ADB20F26BE36540055A8CA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

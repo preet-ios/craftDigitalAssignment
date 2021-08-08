@@ -24,6 +24,7 @@ final class SearchViewController: UIViewController {
     }
     
     private func viewModelBinding() {
+        viewModel.searchData(keyword: "Singapore")
         viewModel.reloadData = { [weak self] in
             DispatchQueue.main.async {
                 self?.searchCollectionView.reloadData()
@@ -58,7 +59,41 @@ extension SearchViewController: UICollectionViewDataSource {
 
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = Int(collectionView.frame.width)/2 - 2
-        return CGSize(width: width, height: width + 20)
+        return CGSize(width: collectionView.frame.width, height: 200)
+    }
+}
+
+extension SearchViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let transformation =  CATransform3DTranslate(CATransform3DIdentity, 0, 50, 0)
+        cell.layer.transform = transformation
+        cell.alpha = 0.3
+        UIView.animate(withDuration: 0.75) {
+          cell.layer.transform = CATransform3DIdentity
+          cell.alpha = 1.0
+        }
+    }
+}
+
+//MARK:- ScrollView Delegates
+extension SearchViewController: UIScrollViewDelegate {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            self.loadMore()
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.loadMore()
+    }
+    
+    private func loadMore() {
+        if searchCollectionView.contentSize.height <= (searchCollectionView.frame.height + searchCollectionView.contentOffset.y) {
+            if !viewModel.isAlreadyInProgress {
+                viewModel.isAlreadyInProgress = true
+                viewModel.isNewSearch = false
+                viewModel.isLoadMore = true
+            }
+        }
     }
 }
