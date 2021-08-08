@@ -27,9 +27,8 @@ final class CoreDataManager {
         if context.hasChanges {
             do {
                 try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            } catch(let error) {
+                print(error.localizedDescription)
             }
         }
     }
