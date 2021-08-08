@@ -9,6 +9,11 @@ import XCTest
 @testable import CraftDigital
 
 struct SearchViewModelMock: ViewModeling {
+    var isAlreadyInProgress = false
+    var isLoadMore = false
+    var reloadData: (() -> Void)? = nil
+    var showError: ((String) -> Void)? = nil
+    
     func searchData(keyword: String) {
         
     }
@@ -23,6 +28,11 @@ struct SearchViewModelMock: ViewModeling {
 }
 
 struct SearchViewModelEmptyMock: ViewModeling {
+    var isAlreadyInProgress = false
+    var isLoadMore = false
+    var reloadData: (() -> Void)? = nil
+    var showError: ((String) -> Void)? = nil
+    
     func searchData(keyword: String) {
         
     }

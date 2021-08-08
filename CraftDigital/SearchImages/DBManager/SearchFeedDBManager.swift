@@ -5,7 +5,7 @@
 //  Created by Simran on 08/08/21.
 //
 
-import Foundation
+import CoreData
 
 struct QueryParams {
     let page: Int
@@ -30,6 +30,22 @@ extension SearchFeedDBManager: SearchFeedDBManaging {
     }
     
     func fetchFeeds(page: Int, keyword: String) -> [SearchResult] {
-        return [SearchResult]()
+        var feeds = [SearchResult]()
+        let request = Feed.fetchRequest() as NSFetchRequest<Feed>
+        do {
+            let fetchResults = try context.fetch(request)
+            
+            feeds = fetchResults.map{
+                SearchResult(
+                    url: $0.imageUrl,
+                    thumbnail: $0.thumbnail,
+                    title: $0.title,
+                    name: $0.name
+                )
+            }
+        } catch(let error) {
+            print(error.localizedDescription)
+        }
+        return feeds
     }
 }
