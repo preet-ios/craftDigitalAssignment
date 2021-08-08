@@ -19,7 +19,6 @@ protocol SearchViewModeling {
 
 protocol SearchResultAPIModeling {
     var isAlreadyInProgress: Bool {get set}
-    var isNewSearch: Bool {get set}
     var isLoadMore: Bool {get set}
     
     func searchData(keyword: String)
@@ -36,12 +35,11 @@ final class SearchViewModel {
     
     var isAlreadyInProgress = false
     private let perPageItem = 20
-    var isNewSearch = true
     var isLoadMore = false {
         didSet {
             if isLoadMore {
-                isNewSearch = false
-                self.searchData(keyword: searchKeyword)
+                let pageCount = Int(items.count/perPageItem) + 1
+                self.searchAPICall(keyword: searchKeyword, isNewSearch: false, pageCount: pageCount)
             }
         }
     }

@@ -91,7 +91,6 @@ extension SearchViewController: UIScrollViewDelegate {
         if searchCollectionView.contentSize.height <= (searchCollectionView.frame.height + searchCollectionView.contentOffset.y) {
             if !viewModel.isAlreadyInProgress {
                 viewModel.isAlreadyInProgress = true
-                viewModel.isNewSearch = false
                 viewModel.isLoadMore = true
             }
         }
