@@ -7,8 +7,15 @@
 
 import Foundation
 
+struct QueryParams {
+    let page: Int
+    let query: String
+    let feeds: [SearchResult]
+}
+
 protocol SearchFeedDBManaging {
-    func save(feeds: [SearchResult])
+    func saveQuery(params: QueryParams)
+    func fetchFeeds(page: Int, keyword: String) -> [SearchResult]
 }
 
 struct SearchFeedDBManager {
@@ -16,10 +23,13 @@ struct SearchFeedDBManager {
 }
 
 extension SearchFeedDBManager: SearchFeedDBManaging {
-    func save(feeds: [SearchResult]) {
-        for feed in feeds {
-          let dbFeeds = feed
-          
+    func saveQuery(params: QueryParams) {
+        if let _ = try? Query.insertEntity(with: params, into: context) {
+            CoreDataManager.shared.saveContext()
         }
+    }
+    
+    func fetchFeeds(page: Int, keyword: String) -> [SearchResult] {
+        return [SearchResult]()
     }
 }

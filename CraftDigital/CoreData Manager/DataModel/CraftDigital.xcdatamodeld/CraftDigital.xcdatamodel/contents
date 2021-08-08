@@ -9,7 +9,7 @@
     <entity name="Query" representedClassName="Query" syncable="YES">
         <attribute name="page" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="query" optional="YES" attributeType="String"/>
-        <relationship name="feeds" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Feed"/>
+        <relationship name="feeds" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Feed"/>
     </entity>
     <elements>
         <element name="Feed" positionX="-67.0694580078125" positionY="-66.8214111328125" width="128" height="103"/>

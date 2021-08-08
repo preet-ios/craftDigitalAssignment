@@ -18,7 +18,24 @@ extension Query {
 
     @NSManaged public var page: Int16
     @NSManaged public var query: String?
-    @NSManaged public var feeds: Feed?
+    @NSManaged public var feeds: Set<Feed>?
+
+}
+
+// MARK: Generated accessors for feeds
+extension Query {
+
+    @objc(addFeedsObject:)
+    @NSManaged public func addToFeeds(_ value: Feed)
+
+    @objc(removeFeedsObject:)
+    @NSManaged public func removeFromFeeds(_ value: Feed)
+
+    @objc(addFeeds:)
+    @NSManaged public func addToFeeds(_ values: NSSet)
+
+    @objc(removeFeeds:)
+    @NSManaged public func removeFromFeeds(_ values: NSSet)
 
 }
 
