@@ -14,13 +14,23 @@ final class SearchViewController: UIViewController {
     private var cellViewModels = [ImageCellViewModel]()
     
     //MARK: - IBOutlets
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchCollectionView: UICollectionView!
     
     // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationUISetUp()
         viewModelBinding()
+    }
+    
+    private func navigationUISetUp() {
+        title = "News Feeds"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.hidesSearchBarWhenScrolling = false
+        let search = UISearchController(searchResultsController: nil)
+        self.navigationItem.searchController = search
+        navigationItem.searchController?.searchBar.delegate = self
+        self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
     }
     
     private func viewModelBinding() {

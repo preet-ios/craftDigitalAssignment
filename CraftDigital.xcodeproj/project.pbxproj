@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B12DAD7A26BFA2F000578D9E /* Feed+EntityCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DAD7926BFA2F000578D9E /* Feed+EntityCreation.swift */; };
+		B12DAD7F26BFD35F00578D9E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DAD7E26BFD35F00578D9E /* UIView+Extension.swift */; };
 		B13E892126BF7D88005624F9 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13E892026BF7D88005624F9 /* UIImageView+Extension.swift */; };
 		B13E892726BF8F1E005624F9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13E892626BF8F1E005624F9 /* CoreDataManager.swift */; };
 		B13E892E26BF8FBF005624F9 /* CraftDigital.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B13E892C26BF8FBF005624F9 /* CraftDigital.xcdatamodeld */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		B12DAD7926BFA2F000578D9E /* Feed+EntityCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Feed+EntityCreation.swift"; sourceTree = "<group>"; };
+		B12DAD7E26BFD35F00578D9E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B13E892026BF7D88005624F9 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		B13E892626BF8F1E005624F9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B13E892D26BF8FBF005624F9 /* CraftDigital.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CraftDigital.xcdatamodel; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 			children = (
 				B1ADB2DA26BEA0220055A8CA /* String+Extension.swift */,
 				B13E892026BF7D88005624F9 /* UIImageView+Extension.swift */,
+				B12DAD7E26BFD35F00578D9E /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				B13E892726BF8F1E005624F9 /* CoreDataManager.swift in Sources */,
 				B13E89B526BF9EC2005624F9 /* Query+CoreDataProperties.swift in Sources */,
 				B1ADB2AF26BE8F1F0055A8CA /* ParameterEncoding.swift in Sources */,
+				B12DAD7F26BFD35F00578D9E /* UIView+Extension.swift in Sources */,
 				B1ADB2E626BEA1ED0055A8CA /* Router.swift in Sources */,
 				B1ADB20D26BE36540055A8CA /* AppDelegate.swift in Sources */,
 				B1ADB29126BE83770055A8CA /* SearchViewModel.swift in Sources */,
