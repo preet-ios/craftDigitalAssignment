@@ -12,6 +12,9 @@ typealias ViewModeling = SearchViewModeling & SearchResultAPIModeling
 protocol SearchViewModeling {
     func numberOfItems() -> Int
     func cellViewModel(at indexPath: IndexPath) -> ImageCellViewModel
+    
+    var reloadData: (()->Void)? {get set}
+    var showError: ((String)-> Void)? {get set}
 }
 
 protocol SearchResultAPIModeling {
@@ -20,7 +23,14 @@ protocol SearchResultAPIModeling {
 
 final class SearchViewModel {
     private let networkManager: SearchManaging
-    private var items: [SearchResult] = []
+    private var items: [SearchResult] = [] {
+        didSet {
+            reloadData?()
+        }
+    }
+    
+    var reloadData: (()->Void)?
+    var showError: ((String)-> Void)?
     
     init(networkManager: SearchManaging) {
         self.networkManager = networkManager

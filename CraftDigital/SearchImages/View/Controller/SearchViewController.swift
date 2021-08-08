@@ -20,6 +20,15 @@ final class SearchViewController: UIViewController {
     // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModelBinding()
+    }
+    
+    private func viewModelBinding() {
+        viewModel.reloadData = { [weak self] in
+            DispatchQueue.main.async {
+                self?.searchCollectionView.reloadData()
+            }
+        }
     }
 }
 
