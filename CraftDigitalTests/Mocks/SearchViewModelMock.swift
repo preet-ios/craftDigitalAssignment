@@ -9,10 +9,10 @@ import XCTest
 @testable import CraftDigital
 
 struct SearchViewModelMock: ViewModeling {
-    var isAlreadyInProgress = false
-    var isLoadMore = false
-    var reloadData: (() -> Void)? = nil
-    var showError: ((String) -> Void)? = nil
+    var reloadData: (() -> Void)?
+    var showError: ((String) -> Void)?
+    var showLoader: ((Bool) -> Void)?
+    
     
     func searchData(keyword: String) {
         
@@ -21,6 +21,12 @@ struct SearchViewModelMock: ViewModeling {
     func numberOfItems() -> Int {
         1
     }
+    func didSelectItem(at indexPath: IndexPath) {
+        
+    }
+    func didScrollTillLast() {
+        
+    }
     
     func cellViewModel(at indexPath: IndexPath) -> ImageCellViewModel {
         ImageCellViewModel(url: "", thumbnail: "", title: "title1", name: "name1")
@@ -28,10 +34,10 @@ struct SearchViewModelMock: ViewModeling {
 }
 
 struct SearchViewModelEmptyMock: ViewModeling {
-    var isAlreadyInProgress = false
-    var isLoadMore = false
-    var reloadData: (() -> Void)? = nil
-    var showError: ((String) -> Void)? = nil
+    
+    var reloadData: (() -> Void)?
+    var showError: ((String) -> Void)?
+    var showLoader: ((Bool) -> Void)?
     
     func searchData(keyword: String) {
         
@@ -39,6 +45,13 @@ struct SearchViewModelEmptyMock: ViewModeling {
     
     func numberOfItems() -> Int {
         0
+    }
+    
+    func didSelectItem(at indexPath: IndexPath) {
+        
+    }
+    func didScrollTillLast() {
+        
     }
     
     func cellViewModel(at indexPath: IndexPath) -> ImageCellViewModel {

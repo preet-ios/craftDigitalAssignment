@@ -23,13 +23,13 @@ enum Result<String>{
 }
 
 protocol SearchManaging {
-    func getSearch(page: Int,query: String, pageSize: Int, autoCorrect: Bool, completion: @escaping (_ movie: [SearchResult]?,_ error: String?)->())
+    func getSearch(page: Int,query: String, pageSize: Int, autoCorrect: Bool, completion: @escaping (_ apiResponse: SearchApiResponse?,_ error: String?)->())
 }
 
 struct SearchManager: SearchManaging {
     let router = Router<SearchApi>()
     
-    func getSearch(page: Int, query: String, pageSize: Int, autoCorrect: Bool, completion: @escaping ([SearchResult]?, String?) -> ()) {
+    func getSearch(page: Int, query: String, pageSize: Int, autoCorrect: Bool, completion: @escaping (SearchApiResponse?, String?) -> ()) {
             router.request(.search(page:page, query: query, pageSize: pageSize, autoCorrect: autoCorrect)) { data, response, error in
                 
                 if error != nil {
@@ -46,7 +46,7 @@ struct SearchManager: SearchManaging {
                         }
                         do {
                             let apiResponse = try JSONDecoder().decode(SearchApiResponse.self, from: responseData)
-                            completion(apiResponse.value,nil)
+                            completion(apiResponse,nil)
                         }catch {
                             completion(nil, NetworkResponse.unableToDecode.rawValue)
                         }

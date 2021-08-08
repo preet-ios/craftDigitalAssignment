@@ -11,13 +11,14 @@ import XCTest
 final class SearchViewControllerTests: XCTestCase {
     //MARK: - SearchBar Tests
     func test_hasSearchBar() {
-        XCTAssertNotNil(makeSUT().searchBar)
+        XCTAssertNotNil(makeSUT().navigationItem.searchController?.searchBar)
     }
     
     func test_searchTextMatch_AfterSearchButtonTapped() {
         let sut = makeSUT()
-        sut.searchBar.text = "Testing"
-        sut.searchBar.searchButtonClicked()
+        let searchBar = sut.navigationItem.searchController?.searchBar
+        searchBar?.text = "Testing"
+        searchBar?.searchButtonClicked()
         
         let expectedText = "Testing"
         let actualKeyword = sut.searchKeyword
@@ -26,8 +27,9 @@ final class SearchViewControllerTests: XCTestCase {
     
     func test_trimSearchText_AfterSearchButtonTapped() {
         let sut = makeSUT()
-        sut.searchBar.text = "Testing "
-        sut.searchBar.searchButtonClicked()
+        let searchBar = sut.navigationItem.searchController?.searchBar
+        searchBar?.text = "Testing "
+        searchBar?.searchButtonClicked()
         
         let expectedText = "Testing"
         let actualKeyword = sut.searchKeyword

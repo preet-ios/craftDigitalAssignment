@@ -122,10 +122,7 @@ extension SearchViewController: UIScrollViewDelegate {
     
     private func loadMore() {
         if searchCollectionView.contentSize.height <= (searchCollectionView.frame.height + searchCollectionView.contentOffset.y) {
-            if !viewModel.isAlreadyInProgress {
-                viewModel.isAlreadyInProgress = true
-                viewModel.isLoadMore = true
-            }
+            viewModel.didScrollTillLast()
         }
     }
 }

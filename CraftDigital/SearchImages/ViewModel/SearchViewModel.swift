@@ -13,6 +13,7 @@ protocol SearchViewModeling {
     func numberOfItems() -> Int
     func cellViewModel(at indexPath: IndexPath) -> ImageCellViewModel
     func didSelectItem(at indexPath: IndexPath)
+    func didScrollTillLast()
     
     var reloadData: (()->Void)? {get set}
     var showError: ((String)-> Void)? {get set}
@@ -20,15 +21,12 @@ protocol SearchViewModeling {
 }
 
 protocol SearchResultAPIModeling {
-    var isAlreadyInProgress: Bool {get set}
-    var isLoadMore: Bool {get set}
-    
     func searchData(keyword: String)
 }
 
 final class SearchViewModel {
     private enum Constants {
-        static let perPageItem = 50
+        static let perPageItem = 20
         static let firstPage = 1
         static let noDataFound = "Data not available, Please try another query!"
     }
@@ -37,6 +35,8 @@ final class SearchViewModel {
     private let networkManager: SearchManaging
     private let databaseManager: SearchFeedDBManaging
     private var router: SearchRouting?
+    private var totalCount = -1
+    private var currentPage = Constants.firstPage
     
     private var items: [SearchResult] = [] {
         didSet {
@@ -45,15 +45,6 @@ final class SearchViewModel {
     }
     
     var isAlreadyInProgress = false
-    var isLoadMore = false {
-        didSet {
-            if isLoadMore {
-                let pageCount = Int(items.count/Constants.perPageItem) + 1
-                getData(page: pageCount, keyword: searchKeyword)
-                self.searchAPICall(keyword: searchKeyword, isNewSearch: false, pageNumber: pageCount)
-            }
-        }
-    }
     
     var reloadData: (()->Void)?
     var showError: ((String)-> Void)?
@@ -63,6 +54,17 @@ final class SearchViewModel {
         self.networkManager = networkManager
         self.databaseManager = database
         self.router = router
+    }
+    
+    func searchData(keyword: String) {
+        searchKeyword = keyword
+        currentPage = Constants.firstPage
+        getData(page: currentPage, keyword: keyword)
+    }
+    
+    func handlePageLoad() {
+        currentPage += 1
+        isAlreadyInProgress = false
     }
 }
 
@@ -81,29 +83,35 @@ extension SearchViewModel: SearchViewModeling {
             router?.feedImageController(of: url)
         }
     }
+    
+    func didScrollTillLast() {
+        getData(page: currentPage, keyword: searchKeyword)
+    }
 }
 
 extension SearchViewModel: SearchResultAPIModeling {
-    func searchData(keyword: String) {
-        searchKeyword = keyword
-        getData(page: Constants.firstPage, keyword: keyword)
-    }
-    
-    private func searchAPICall(keyword: String, isNewSearch: Bool, pageNumber: Int) {
+    private func searchAPICall(keyword: String, pageNumber: Int) {
+        if isAlreadyInProgress || (items.count >= totalCount && totalCount != -1) {
+            return
+        }
+        print(" API page number is ", pageNumber, items.count)
+
         isAlreadyInProgress = true
         showLoader?(pageNumber == Constants.firstPage)
         networkManager.getSearch(page: pageNumber,
                                  query: keyword,
                                  pageSize: Constants.perPageItem,
-                                 autoCorrect: true) {[weak self] results, error in
+                                 autoCorrect: true) {[weak self] response, error in
             guard let self = self else { return }
-            self.isAlreadyInProgress = false
             self.showLoader?(false)
-            if let result = results, !result.isEmpty {
+            
+            if let response = response,
+               let result = response.value,
+               !result.isEmpty {
+                self.totalCount = response.totalCount ?? -1
                 self.saveData(page: pageNumber, keyword: keyword, result: result)
-                self.items.append(contentsOf: result)
+                self.handlePageLoad()
             } else {
-                //Error handling
                 self.showError?(Constants.noDataFound)
             }
         }
@@ -115,15 +123,22 @@ extension SearchViewModel {
         if page == Constants.firstPage {
             items.removeAll()
         }
+        
+        
         let feeds = databaseManager.fetchFeeds(page: page, keyword: keyword)
         if feeds.isEmpty {
-            searchAPICall(keyword: keyword, isNewSearch: page == Constants.firstPage, pageNumber: page)
+            searchAPICall(keyword: keyword, pageNumber: page)
         } else {
+            print("page number is ", page, items.count)
+
             self.items.append(contentsOf: feeds)
+            handlePageLoad()
         }
     }
     
     private func saveData(page: Int, keyword: String, result: [SearchResult]) {
+        items.append(contentsOf: result)
+
         let queryParams = QueryParams(page: page, query: keyword, feeds: result)
         databaseManager.saveQuery(params: queryParams)
     }

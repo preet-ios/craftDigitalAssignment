@@ -39,13 +39,7 @@ extension UIImageView {
     URLSession.shared.dataTask(with: url) {
       data, response, error in
       if error != nil {
-        if (error as? URLError)?.errorCode == -1001 {
-          DispatchQueue.main.async {
-            activityIndecator.removeFromSuperview()
-            activityIndecator.isHidden = true
-            self.image = nil
-          }
-        }
+        self.noImageFound(activityIndecator)
         return
       }
       if let data = data,
