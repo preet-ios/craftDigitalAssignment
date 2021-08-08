@@ -31,18 +31,22 @@ extension SearchFeedDBManager: SearchFeedDBManaging {
     
     func fetchFeeds(page: Int, keyword: String) -> [SearchResult] {
         var feeds = [SearchResult]()
-        let request = Feed.fetchRequest() as NSFetchRequest<Feed>
+        
+        let request = Query.fetchRequest() as NSFetchRequest<Query>
+        request.predicate = NSPredicate(format: "page == %@ AND query == %@", argumentArray: [page, keyword])
+        
         do {
-            let fetchResults = try context.fetch(request)
-            
-            feeds = fetchResults.map{
-                SearchResult(
-                    url: $0.imageUrl,
-                    thumbnail: $0.thumbnail,
-                    title: $0.title,
-                    name: $0.name
-                )
+            if let query = try context.fetch(request).first, let tempFeedArr = query.feeds {
+                feeds = Array(tempFeedArr).map{
+                    SearchResult(
+                        url: $0.imageUrl,
+                        thumbnail: $0.thumbnail,
+                        title: $0.title,
+                        name: $0.name
+                    )
+                }
             }
+            
         } catch(let error) {
             print(error.localizedDescription)
         }

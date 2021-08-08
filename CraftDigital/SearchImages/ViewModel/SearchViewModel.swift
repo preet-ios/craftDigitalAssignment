@@ -70,7 +70,6 @@ extension SearchViewModel: SearchResultAPIModeling {
     func searchData(keyword: String) {
         searchKeyword = keyword
         getData(page: 1, keyword: keyword)
-//        searchAPICall(keyword: searchKeyword, isNewSearch: true, pageCount: 1)
     }
     
     private func searchAPICall(keyword: String, isNewSearch: Bool, pageCount: Int) {
@@ -86,9 +85,10 @@ extension SearchViewModel: SearchResultAPIModeling {
             self.isAlreadyInProgress = false
             if let result = results {
                 self.saveData(page: pageCount, keyword: keyword, result: result)
-//                self.items.append(contentsOf: result)
+                self.items.append(contentsOf: result)
             } else {
                 //Error handling
+                print(error ?? "")
             }
         }
     }
@@ -101,7 +101,6 @@ extension SearchViewModel {
             searchAPICall(keyword: keyword, isNewSearch: page == 1, pageCount: page)
         } else {
             self.items.append(contentsOf: feeds)
-            print(feeds)
         }
     }
     

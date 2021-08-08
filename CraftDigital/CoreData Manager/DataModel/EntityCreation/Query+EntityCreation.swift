@@ -19,6 +19,7 @@ extension Query {
                 feeds.insert(feedQuery)
             }
         }
+        entityQuery.feeds = feeds
         return entityQuery
     }
 }
